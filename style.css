@@ -1,0 +1,223 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+    box-sizing: border-box; /* Prevent horizontal scroll */
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar-brand img {
+    border-radius: 50%;
+}
+
+/* =========================
+   WELCOME SCREEN
+========================= */
+#welcome-screen {
+    min-height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#welcome-screen .overlay {
+    background-color: rgba(0, 0, 0, 0.65);
+    min-height: 100vh;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.home-logo {
+    width: 110px;
+    margin-bottom: 20px;
+}
+
+#welcome-screen h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#welcome-screen p {
+    max-width: 500px;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   CATEGORY BUTTONS
+========================= */
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+}
+
+.category-buttons .btn {
+    min-width: 180px;
+    font-size: 1rem;
+}
+
+/* =========================
+   QUIZ SECTION
+========================= */
+#quiz-section {
+    min-height: 80vh;
+    padding-bottom: 40px; /* Avoid overlap with footer */
+}
+
+.quiz-top {
+    font-size: 1rem;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   QUESTION CARD
+========================= */
+.card {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+#question-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   OPTIONS (MCQs)
+========================= */
+#options button {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+.progress {
+    height: 20px;
+}
+
+.progress-bar {
+    background-color: #198754;
+    font-weight: bold;
+}
+
+/* =========================
+   RESULT SCREEN
+========================= */
+#result-screen {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Move result card near bottom */
+    min-height: calc(100vh - 80px); /* Full height minus navbar */
+    padding: 20px;
+}
+
+#result-screen .card {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    font-size: 0.9rem;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* =========================
+   FOOTER FIXED TO BOTTOM
+========================= */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#quiz-section,
+#welcome-screen,
+#result-screen {
+    flex: 1; /* take remaining space */
+}
+
+/* Footer always at bottom */
+.footer {
+    font-size: 0.9rem;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 15px; /* increase height to cover white space */
+    width: 100%;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    #welcome-screen h1 {
+        font-size: 2rem;
+    }
+
+    .category-buttons .btn {
+        width: 100%; /* Full width buttons */
+    }
+
+    .quiz-top {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    #result-screen {
+        padding-bottom: 80px; /* Space for footer */
+    }
+}
+
+@media (max-width: 480px) {
+    #welcome-screen h1 {
+        font-size: 1.8rem;
+    }
+
+    #welcome-screen p {
+        font-size: 1rem;
+    }
+
+    #options button {
+        font-size: 0.95rem;
+    }
+}
